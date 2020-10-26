@@ -1,0 +1,35 @@
+.header-home {
+    background-color: var(--background-color-button);
+    padding: 15px 10px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-home img {
+    width: 5vw;
+    height: 5vh;
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+}
+
+.link-username::before {
+    content: '@';
+}
+
+.link-username {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--color-main-text);
+}
+
+.link-logout {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--color-secondary-text);
+}

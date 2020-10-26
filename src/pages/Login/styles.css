@@ -1,0 +1,123 @@
+.app {
+    width: 100% !important;
+}
+
+.container {
+    background-color: var(--background-color-body);
+    margin: auto;
+    width: 25vw;
+    padding: 25px 50px;
+    /* border: 2px var(--color-main-text) solid; */
+    border-radius: 5px;   
+}
+
+.img-logo {
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;  
+    margin-bottom: 2.1em;
+}
+
+.title-page {
+    text-transform: uppercase;
+    font-weight: 700 !important;
+}
+
+.line-title {
+    width: 70%;
+    height: 2px;
+}
+
+.form-container {
+    margin-top: 1.2em;
+}
+.form-container label {
+    color: var(--color-main-text);
+    font-weight: 500;
+}
+
+.form-field {
+    width: 100%;
+    margin-bottom: 0.7em;
+    outline: 0;
+    border: 2px var(--background-color-button) solid;
+    border-radius: 5px;
+    padding: 14px 10px;
+    background-color: transparent;
+    color: var(--color-main-text);
+    box-shadow: 2px 50px 155px -86px rgba(0,0,0,0.75);
+}
+
+.form-field::placeholder{
+    color: var(--background-color-button);
+}
+
+.form-submit {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 0.7em;
+    padding: 10px 0px;
+    width: 100%;
+    outline: 0;
+    border: 1px var(--color-main-text) solid;
+    background-color: transparent;
+    color: var(--color-main-text);
+    transition: 0.2s ease-in-out;
+    border-radius: 5px;  
+}
+
+.form-submit:hover{
+    background-color: var(--color-main-text);
+    color: var(--background-color-body);
+}
+
+.row {
+    display: flex;
+  }
+  
+.col {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    text-align: center;
+}
+
+.col:last-child{
+    border-left: 1px var(--color-secondary-text) solid;
+}
+
+.alternative-links {
+    justify-content: center;
+    text-decoration: none;
+    color: var(--color-main-text);
+}
+
+.link-back-login {
+    margin-top: 0.7em;
+    color: var(--color-main-text)
+}
+
+.button-linkedin {
+    margin-top: 0.7em;
+    border: none;
+    width: 100%;
+    color: #fff;
+    background-color: #0077B5;
+    padding: 10px 0px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 90vw;
+    }
+}
