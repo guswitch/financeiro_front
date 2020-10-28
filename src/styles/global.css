@@ -26,10 +26,11 @@ html,body,#root{
 body {
      /* background-color: var(--background-color-body); */
      background: url('../assets/wallpaper.jpg');
-     background-size: cover; 
+     background-size: cover;
 }
 
 #root {
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +46,16 @@ input, button, textarea {
     border-radius: 0;
 }
 
-h1, h2, h3 {
+button:active {
+  outline: none;
+  border: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+h1 {
     color: var(--color-main-text);
     font-weight: 500;
 }

@@ -5,7 +5,7 @@
 .container {
     background-color: var(--background-color-body);
     margin: auto;
-    width: 25vw;
+    width: 30vw;
     padding: 25px 50px;
     /* border: 2px var(--color-main-text) solid; */
     border-radius: 5px;   
@@ -87,7 +87,6 @@
     align-items: center;
     padding: 5px 5px;
     cursor: pointer;
-    transition: 0.2s ease-in-out;
     text-align: center;
 }
 
@@ -104,15 +103,6 @@
 .link-back-login {
     margin-top: 0.7em;
     color: var(--color-main-text)
-}
-
-.button-linkedin {
-    margin-top: 0.7em;
-    border: none;
-    width: 100%;
-    color: #fff;
-    background-color: #0077B5;
-    padding: 10px 0px;
 }
 
 

@@ -83,10 +83,10 @@ export default function Login() {
 
                 <div className="row">
                     <div className="col">
-                        <Link to="/forgetpassword" className="alternative-links"> Forget your password ? </Link> 
+                        <Link to="/forgetpassword" className="alternative-links"> Recover my password  </Link> 
                     </div>
                     <div className="col">
-                        <Link to="/signup" className="alternative-links">  Register </Link>
+                        <Link to="/signup" className="alternative-links">  Sign Up </Link>
                     </div>
                 </div>
 

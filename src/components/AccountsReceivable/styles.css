@@ -1,0 +1,29 @@
+#container-accounts-receivable-container {
+    background-color: var(--background-color-body);
+    margin: auto;
+    height: 80vh;
+    width: 45vw;
+    padding: 25px 50px;
+    border-radius: 5px;
+}
+
+#container-accounts-receivable-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+#container-accounts-receivable-content {
+    padding: 0 10px;
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+@media only screen and (max-width: 768px) {
+    #container-accounts-receivable-container {
+      padding: 15px 20px;
+      margin-top: 50px;
+      width: 95vw;
+    }
+}
