@@ -1,0 +1,43 @@
+.container-debtors {
+    background-color: var(--background-color-body);
+    margin-top: 50px;
+    margin: auto;
+    min-height: 80vh;
+    height: auto;
+    width: 45vw;
+    padding: 25px 50px;
+    border-radius: 5px;
+}
+
+.container-debtors-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.container-debtors-content ul {
+    list-style-type: none;
+
+}
+.container-debtors-content ul li {
+    margin-top: 10px;
+    padding: 25px 15px;
+    border: 2px var(--background-color-container) solid;
+    border-radius: 5px;
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 768px) {
+    .container-debtors {
+        padding: 15px 20px;
+        margin-top: 120px;
+    }
+
+    /* .container-register-accounts-payable-container {
+      padding: 15px 20px;
+      margin-top: 120px;
+      width: 95vw;
+  } */
+}

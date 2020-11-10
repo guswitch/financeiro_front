@@ -1,5 +1,5 @@
+/* .working img {
 
-.working img {
     width: 100%;
 }
 .working div {
@@ -30,4 +30,19 @@
     to {
       width: 1.25em;    
     }
-  }
+  } */
+
+#container-root {
+  min-width: 100vh;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#container-root > div {
+  margin: 25px ;
+}

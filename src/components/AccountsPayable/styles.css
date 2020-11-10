@@ -1,13 +1,13 @@
-#container-accounts-payable-container {
+.container-accounts-payable-container {
     background-color: var(--background-color-body);
-    margin: auto;
-    height: 80vh;
+    min-height: 80vh;
+    height: auto;
     width: 45vw;
     padding: 25px 50px;
     border-radius: 5px;
 }
 
-#container-accounts-payable-bar {
+.container-accounts-payable-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,10 +82,63 @@
   padding: 10px 15px;
 }
 
+#container-register-accounts-payable-container {
+  background-color: var(--background-color-body);
+  margin: auto;
+  min-height: 80vh;
+  width: 45vw;
+  padding: 25px 50px;
+  border-radius: 5px;
+}
+
+#container-register-accounts-payable-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+#container-register-accounts-payable-content {
+  padding: 0 10px;
+    height: auto;
+}
+
+.container-accounts-payable-content form label {
+  display: block;
+  font-size: larger;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--color-secondary-text);
+}
+
+.container-accounts-payable-content form input, .container-accounts-payable-content form select {
+  color: var(--color-secondary-text);
+  border: 2px var(--background-color-button) solid;
+  background: transparent;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+  width: 100%;
+  display: block;
+}
+
+.container-accounts-payable-content a {
+  font-size: medium;
+  font-weight: 500;
+  color: var(--color-main-text)
+}
+
 @media only screen and (max-width: 768px) {
-    #container-accounts-payable-container {
+    .container-accounts-payable-container {
         padding: 15px 20px;
         margin-top: 120px;
         width: 95vw;
     }
+
+    /* .container-register-accounts-payable-container {
+      padding: 15px 20px;
+      margin-top: 120px;
+      width: 95vw;
+  } */
 }
+
