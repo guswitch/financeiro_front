@@ -1,0 +1,19 @@
+.container-cotacao{
+    width: 92vw;
+    background-color: var(--background-color-body);
+    border-radius: 5px;
+}
+
+.list{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.list .cotacao p{
+    margin-top: 6px;
+}
+
+

@@ -34,6 +34,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 body, input, select, button, textarea {
@@ -58,3 +59,22 @@ h1 {
     color: var(--color-main-text);
     font-weight: 500;
 }
+
+form label {
+    display: block;
+    font-size: larger;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--color-secondary-text);
+  }
+  
+form input,form select {
+    color: var(--color-secondary-text);
+    border: 2px var(--background-color-button) solid;
+    background: transparent;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px 10px;
+    width: 100%;
+    display: block;
+  }

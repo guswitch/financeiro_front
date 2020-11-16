@@ -69,7 +69,7 @@ export default function Creditors() {
         //  console.log(question);
         if (question) {
             try {
-                const response = await api.delete(`/Creditor/Delete/${_id}`);
+                await api.delete(`/Creditor/Delete/${_id}`);
                 alert("Excluido com sucesso");
                 setcontrollerComponents("");
 
@@ -83,17 +83,19 @@ export default function Creditors() {
         return (
             <div className="container-creditors">
                 <div className="container-creditors-bar">
-                    <h1> cCeditors Details: </h1>
+                    <h1> Creditor Details: </h1>
                 </div>
                 <div className="container-creditors-content">
                     <h3> {creditor.name} </h3>
-                    <p> {creditor.cnpj} </p>
+                    <p> <b> CNPJ: </b> {creditor.cnpj} </p>
                     <p> <b> Mainly activity: </b>  {creditor.mainlyActivty} </p>
                     <p> <b> Email: </b>  {creditor.email} </p>
                     <p> <b> Phone: </b>  {creditor.phone} </p>
                     <p> <b> CEP: </b>  {creditor.cep} </p>
-                    <button onClick={() => openDeleteCreditor(creditor._id)}> Delete </button>
-                    <button onClick={() => setcontrollerComponents("")}> Voltar </button>
+                    <div className="actions-details">
+                        <button className="btn-back" onClick={() => setcontrollerComponents("")}> Voltar </button>
+                        <button className="btn-delete" onClick={() => openDeleteCreditor(creditor._id)}> Delete </button>
+                    </div>
                 </div>
             </div>
         );
@@ -123,7 +125,9 @@ export default function Creditors() {
 
     
                     </form>
-                    <button onClick={() => setcontrollerComponents("")}> Voltar </button>
+                    <div className="actions-details">
+                    <button class="btn-back" onClick={() => setcontrollerComponents("")}> Voltar </button>
+                    </div>
                 </div>
             </div>
         );

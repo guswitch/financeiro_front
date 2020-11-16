@@ -1,28 +1,82 @@
-#container-accounts-receivable-container {
+.container-accounts-receivable-container {
     background-color: var(--background-color-body);
-    height: 80vh;
+    min-height: 80vh;
+    height: auto;
     width: 45vw;
     padding: 25px 50px;
     border-radius: 5px;
 }
 
-#container-accounts-receivable-bar {
+.container-accounts-receivable-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
 }
 
-#container-accounts-receivable-content {
-    padding: 0 10px;
+.container-accounts-receivable-bar div button {
+  margin-left: 15px;
+}
+
+.container-accounts-receivable-content {
+  padding: 0 10px;
     height: 60vh;
     overflow-y: scroll;
 }
 
+.container-accounts-receivable-content .price {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.container-accounts-receivable-content .description {
+  font-size: 2rem;
+  margin-top: 5px;
+  font-weight: normal;
+}
+
+.container-accounts-receivable-content .maturityDate {
+  margin-top: 5px;
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+
+.container-accounts-receivable-content form label {
+  display: block;
+  font-size: larger;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--color-secondary-text);
+}
+
+.container-accounts-receivable-content form input, .container-accounts-receivable-content form select {
+  color: var(--color-secondary-text);
+  border: 2px var(--background-color-button) solid;
+  background: transparent;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+  width: 100%;
+  display: block;
+}
+
+.container-accounts-receivable-content a {
+  font-size: medium;
+  font-weight: 500;
+  color: var(--color-main-text)
+}
+
 @media only screen and (max-width: 768px) {
-    #container-accounts-receivable-container {
-      padding: 15px 20px;
-      margin-top: 50px;
-      width: 95vw;
+    .container-accounts-receivable-container {
+        padding: 15px 20px;
+        margin-top: 120px;
+        width: 95vw;
     }
+
+    /* .container-register-accounts-receivable-container {
+      padding: 15px 20px;
+      margin-top: 120px;
+      width: 95vw;
+  } */
 }

@@ -55,7 +55,7 @@ export default function Departments() {
         //  console.log(question);
         if (question) {
             try {
-                const response = await api.delete(`/Department/Delete/${_id}`);
+                await api.delete(`/Department/Delete/${_id}`);
                 alert("Excluido com sucesso");
                 setcontrollerComponents("");
 
@@ -74,10 +74,12 @@ export default function Departments() {
                 <div className="container-departments-content">
                     <h3> {department.name} </h3>
                     <p> {department.description} </p>
-                    <p> <b> Bills Qtd: </b>  5 </p>
-                    <p> <b> Bills Total price: </b>  1000R$ </p>
-                    <button onClick={() => openDeleteDepartment(department._id)}> Delete </button>
-                    <button onClick={() => setcontrollerComponents("")}> Voltar </button>
+                    <p> <b> Bills Qtd: </b>  0 </p>
+                    <p> <b> Bills Total price: </b>  0R$ </p>
+                    <div className="actions-details">
+                        <button className="btn-back" onClick={() => setcontrollerComponents("")}> Voltar </button>
+                        <button className="btn-delete" onClick={() => openDeleteDepartment(department._id)}> Delete </button>
+                    </div>
                 </div>
             </div>
         );
@@ -100,7 +102,9 @@ export default function Departments() {
 
     
                     </form>
-                    <button onClick={() => setcontrollerComponents("")}> Voltar </button>
+                    <div className="actions-details">
+                    <button class="btn-back" onClick={() => setcontrollerComponents("")}> Voltar </button>
+                    </div>
                 </div>
             </div>
         );

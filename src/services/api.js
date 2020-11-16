@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getToken } from './auth';
 
-const api = axios.create({baseURL: 'http://localhost:3001/api'});
+const api = axios.create({baseURL: 'https://setor-financeiro-backend.herokuapp.com/api/'});
 
 api.interceptors.request.use(async (config) => {
     const token = getToken();

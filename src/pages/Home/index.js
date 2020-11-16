@@ -7,6 +7,7 @@ import AccountsReceivable from '../../components/AccountsReceivable';
 import Departments from '../../components/Departments';
 import Creditors from '../../components/Creditors';
 import Debtors from '../../components/Debtors';
+import Cotacao from '../../components/Cotacao';
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
             <Header />
 
             <div id="container-root">
+                <Cotacao />
                 <AccountsPayable />
                 <AccountsReceivable />
                 <Creditors />

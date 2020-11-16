@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import moment from 'moment';
 
 import api from '../../services/api';
@@ -9,6 +8,7 @@ import './styles.css';
 export default function AccountsReceivable() {
 
     const [accountsReceivable, setAccountsReceivable] = useState([]);
+    const [accountsReceived, setAccountsReceived] = useState([]);
     const [accountReceivable, setAccountReceivable] = useState({});
     const [debtors, setDebtors] = useState([]);
 
@@ -24,6 +24,8 @@ export default function AccountsReceivable() {
             try {
                 const response = await api.get('/AccountsReceivable/');
                 setAccountsReceivable(response.data);
+                const response2 = await api.get(`/AccountsReceived/`);
+                setAccountsReceived(response2.data);
             } catch (error) {
                 console.error(error);
             }
@@ -42,9 +44,9 @@ export default function AccountsReceivable() {
                 console.error(error);
             }
         }
-  
+
         getDebtor();
-    },[debtors])
+    }, [debtors])
 
     async function RegisterAccount() {
         try {
@@ -60,7 +62,7 @@ export default function AccountsReceivable() {
     async function openDetailsAccount(_id) {
         try {
             const response = await api.get(`/AccountsReceivable/${_id}`);
-            setAccountReceivable(response.data)
+            setAccountReceivable(response.data);
             console.log(accountReceivable);
             setcontrollerComponents("openDetails");
 
@@ -74,7 +76,7 @@ export default function AccountsReceivable() {
         //  console.log(question);
         if (question) {
             try {
-                const response = await api.delete(`/AccountsReceivable/Delete/${_id}`);
+                await api.delete(`/AccountsReceivable/Delete/${_id}`);
                 alert("Excluido com sucesso");
                 setcontrollerComponents("");
 
@@ -84,14 +86,23 @@ export default function AccountsReceivable() {
         }
     }
 
+    async function PayAccount(_id) {
+        try {
+            await api.put(`/AccountsReceivable/Update/${_id}`, { received: true });
+            alert("conta recebida com sucesso");
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     if (controllerComponents === "openRegister")
         return (
-            <div className="container-accounts-payable-container">
-                <div id="container-register-accounts-payable-bar">
+            <div className="container-accounts-receivable-container">
+                <div className="container-accounts-receivable-bar">
                     <h1> Register Account </h1>
                     <button className="btnAddBill" onClick={RegisterAccount}> ✓ </button>
                 </div>
-                <div id="container-accounts-payable-content">
+                <div className="container-accounts-receivable-content">
                     <form>
 
                         <label> Creditor: </label>
@@ -116,35 +127,76 @@ export default function AccountsReceivable() {
 
                     </form>
                     <br />
-                    <button onClick={() => setcontrollerComponents("")}> Voltar </button>
+                    <div className="actions-details">
+                        <button class="btn-back" onClick={() => setcontrollerComponents("")}> Voltar </button>
+                    </div>
                 </div>
             </div>
         );
 
     if (controllerComponents === "openDetails")
         return (
-            <div className="container-accounts-payable-container">
-                <div className="container-accounts-payable-bar">
+            <div className="container-accounts-receivable-container">
+                <div className="container-accounts-receivable-bar">
                     <h1> Details Account </h1>
                 </div>
-                <div className="container-accounts-payable-content">
+                <div className="container-accounts-receivable-content">
                     <label className="price"> {accountReceivable.price} R$ </label>
                     <p className="description"> {accountReceivable.debtorId.name} </p>
-                    <p className="maturityDate"> {moment(accountReceivable.emissionDate).format('DD/MM/YYYY')} </p>
-                    <p className="maturityDate"> {moment(accountReceivable.maturityDate).format('DD/MM/YYYY')} </p>
+                    <p className="maturityDate"> <b> Emission Date </b> {moment(accountReceivable.emissionDate).format('DD/MM/YYYY')} </p>
+                    <p className="maturityDate"> <b> Maturity Date </b> {moment(accountReceivable.maturityDate).format('DD/MM/YYYY')} </p>
                     <br />
                     {/* <a href="#" onClick={() => setcontrollerComponents("openUpdate")}> Update </a> */}
-                    <button onClick={() => openDeleteAccount(accountReceivable._id)}> Delete </button>
-                    <button onClick={() => setcontrollerComponents("")}> Voltar </button>
+                    <div className="actions-details">
+                        <button className="btn-back" onClick={() => setcontrollerComponents("")}> Voltar </button>
+                        <button className="btn-delete" onClick={() => openDeleteAccount(accountReceivable._id)}> Delete </button>
+                    </div>
                 </div>
             </div>
         );
 
+    if (controllerComponents === "openHistory") {
+        return (
+            <div className="container-accounts-payable-container">
+                <div className="container-accounts-payable-bar">
+                    <h1> Bills Received </h1>
+                    <div>
+                        <button className="btnAddBill" onClick={() => setcontrollerComponents("")}> ↩ </button>
+                    </div>
+                </div>
+                <div id="container-accounts-payable-content">
+                    {
+                        accountsReceived.map(accountReceived => {
+
+                            const { _id, description, price, maturityDate } = accountReceived;
+
+                            return (
+
+                                <div className="banner"
+                                    key={_id} >
+                                    <div className="info" onClick={() => openDetailsAccount(_id)}>
+                                        <label className="price"> {price} R$ </label>
+                                        <p className="description"> {description} </p>
+                                        <p className="maturityDate"> {moment(maturityDate).format('DD/MM/YYYY')} </p>
+                                    </div>
+                                </div>
+
+                            )
+                        })
+                    }
+                </div>
+            </div>
+        );
+    }
+
     return (
-        <div className="container-accounts-payable-container" >
-            <div className="container-accounts-payable-bar" >
+        <div className="container-accounts-receivable-container" >
+            <div className="container-accounts-receivable-bar" >
                 <h1> Bills to Receive </h1>
-                <button className="btnAddBill" onClick={() => setcontrollerComponents("openRegister")} > + </button>
+                <div>
+                    <button className="btnAddBill" onClick={() => setcontrollerComponents("openRegister")} > + </button>
+                    <button className="btnAddBill" onClick={() => setcontrollerComponents("openHistory")}> 🗂 </button>
+                </div>
             </div>
             <div className="container-accounts-payable-content">
                 {
@@ -155,13 +207,13 @@ export default function AccountsReceivable() {
                         return (
 
                             <div className="banner"
-                                key={_id} onClick={() => openDetailsAccount(_id)}>
-                                <div className="info" >
+                                key={_id} >
+                                <div className="info" onClick={() => openDetailsAccount(_id)}>
                                     <label className="price" > {price} R$ </label>
                                     <p className="maturityDate" > {moment(maturityDate).format('DD/MM/YYYY')} </p>
                                 </div>
                                 <div className="actions" >
-                                    <button className="btnpg" > Received </button>
+                                    <button className="btnpg" onClick={() => PayAccount(_id)}> Received </button>
                                 </div>
                             </div>
 

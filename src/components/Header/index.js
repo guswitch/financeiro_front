@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 
 import imgLogo from '../../assets/logo_financeiro.svg';
 
-import { getToken, logout } from '../../services/auth';
-import api from '../../services/api';
+import { logout } from '../../services/auth';
 
 import './styles.css';
 

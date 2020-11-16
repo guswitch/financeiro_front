@@ -14,6 +14,56 @@
     padding: 20px 0;
 }
 
+.container-accounts-payable-bar div button {
+  margin-left: 15px;
+}
+
+.container-accounts-payable-content {
+  padding: 0 10px;
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+.container-accounts-payable-content .price {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.container-accounts-payable-content .description {
+  font-size: 2rem;
+  margin-top: 5px;
+  font-weight: normal;
+}
+
+.container-accounts-payable-content .maturityDate {
+  margin-top: 5px;
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.container-accounts-payable-content a {
+  font-size: medium;
+  font-weight: 500;
+  color: var(--color-main-text)
+}
+
+@media only screen and (max-width: 768px) {
+    .container-accounts-payable-container {
+        padding: 15px 20px;
+        margin-top: 120px;
+        width: 95vw;
+    }
+
+    /* .container-register-accounts-payable-container {
+      padding: 15px 20px;
+      margin-top: 120px;
+      width: 95vw;
+  } */
+}
+
+
+/* Estilos que estão sendo usados em outros components */
+
 .btnAddBill {
   border-radius: 5px;
   background-color: transparent;
@@ -45,100 +95,98 @@
 }
 
 
-#container-accounts-payable-content {
-  padding: 0 10px;
-    height: 60vh;
-    overflow-y: scroll;
-}
-
 .banner {
-    margin-top: 10px;
-    /* background-color: var(--background-color-container); */
-    border: 1px var(--background-color-container) solid;
-    padding: 25px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 5px;
-}
-
-.banner .info .price {
-  font-size: 3rem;
-  font-weight: bolder;
-}
-
-.banner .info .description {
-  font-size: 2rem;
-  margin-top: 5px;
-  font-weight: lighter;
-}
-
-.banner .info .maturityDate {
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-.banner .actions .btnpg {
-  padding: 10px 15px;
-}
-
-#container-register-accounts-payable-container {
-  background-color: var(--background-color-body);
-  margin: auto;
-  min-height: 80vh;
-  width: 45vw;
-  padding: 25px 50px;
-  border-radius: 5px;
-}
-
-#container-register-accounts-payable-bar {
+  margin-top: 10px;
+  /* background-color: var(--background-color-container); */
+  border: 1px var(--background-color-container) solid;
+  padding: 25px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
-}
-
-#container-register-accounts-payable-content {
-  padding: 0 10px;
-    height: auto;
-}
-
-.container-accounts-payable-content form label {
-  display: block;
-  font-size: larger;
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: var(--color-secondary-text);
-}
-
-.container-accounts-payable-content form input, .container-accounts-payable-content form select {
-  color: var(--color-secondary-text);
-  border: 2px var(--background-color-button) solid;
-  background: transparent;
   border-radius: 5px;
-  margin-bottom: 15px;
-  padding: 15px 10px;
-  width: 100%;
-  display: block;
 }
 
-.container-accounts-payable-content a {
-  font-size: medium;
-  font-weight: 500;
-  color: var(--color-main-text)
+.banner .info {
+width: 80%;
+cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
-    .container-accounts-payable-container {
-        padding: 15px 20px;
-        margin-top: 120px;
-        width: 95vw;
-    }
-
-    /* .container-register-accounts-payable-container {
-      padding: 15px 20px;
-      margin-top: 120px;
-      width: 95vw;
-  } */
+.banner .info .price {
+font-size: 3rem;
+font-weight: bolder;
 }
 
+.banner .info .description {
+font-size: 2rem;
+margin-top: 5px;
+font-weight: lighter;
+}
+
+.banner .info .maturityDate {
+margin-top: 5px;
+font-weight: normal;
+}
+
+.banner .actions .btnpg {
+padding: 10px 15px;
+}
+
+.bill-unpaid {
+  width: 20%;
+  border: 2px #ff8d8db6 solid;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ff8d8db6;
+  margin-top: 20px;
+}
+
+.bill-paid {
+  width: 20%;
+  border: 2px #5e9958 solid;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e9958;
+  margin-top: 20px;
+}
+
+.actions-details {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-delete {
+  border-radius: 5px;
+  background-color: transparent;
+  color: #ff8d8d;
+  font-size: 2rem;
+  border: 2px #ff8d8d solid;
+  transition: 0.2s ease-in-out;
+  padding: 7px 20px;
+}
+
+.btn-delete:hover {
+  background-color: #ff8d8d;
+  color: var(--background-color-body);
+}
+
+.btn-back {
+  border-radius: 5px;
+  background-color: transparent;
+  color: #a3a3a3;
+  font-size: 2rem;
+  border: 2px #a3a3a3 solid;
+  transition: 0.2s ease-in-out;
+  padding: 7px 20px;
+}
+
+.btn-back:hover {
+  background-color: #a3a3a3;
+  color: var(--background-color-body);
+}
