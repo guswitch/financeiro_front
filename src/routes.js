@@ -4,7 +4,6 @@ import {BrowserRouter,Switch,Redirect,Route} from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ForgetPass from './pages/ForgetPassword';
-// import Profile from './pages/Profile';
 import { isAuthenticated } from './services/auth';
 import Home from './pages/Home';
 
@@ -30,7 +29,6 @@ const Routes = () => (
             <Route path='/signup' component={Register}/>
             <Route path='/forgetpassword' component={ForgetPass}/>
             <PrivateRoute path='/home' component={Home}/>
-            {/* <PrivateRoute path='/profile' component={(Profile)}/> */}
         </Switch>
     </BrowserRouter>
 )
