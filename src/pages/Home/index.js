@@ -12,7 +12,7 @@ import Cotacao from '../../components/Cotacao';
 export default function Home() {
 
     return (
-        <>
+        <div>
             <Header />
 
             <div id="container-root">
@@ -29,7 +29,7 @@ export default function Home() {
                 <div> This is being built </div>
             </div> */}
 
-        </>
+        </div>
 
     )
 }
