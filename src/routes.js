@@ -28,7 +28,7 @@ const Routes = () => (
             <Route exact path='/auth' component={(Login)}/>
             <Route path='/signup' component={(Register)}/>
             <Route path='/forgetpassword' component={(ForgetPass)}/>
-            <PrivateRoute path='/home' component={(Home)}/>
+            <Route path='/home' component={(Home)}/>
             {/* <PrivateRoute path='/profile' component={(Profile)}/> */}
         </Switch>
     </BrowserRouter>
